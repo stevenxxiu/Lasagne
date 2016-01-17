@@ -15,7 +15,7 @@ install:
   - travis_wait travis_retry pip install -r requirements-dev.txt
   - travis_retry pip install python-coveralls
   - travis_retry python setup.py dev
-script: py.test --runslow --cov-config=.coveragerc-nogpu
+script: py.test lasagne/ --runslow --cov-config=.coveragerc-nogpu --cov=lasagne --cov-report=term-missing
 after_success:
   - coveralls
 cache:
